@@ -18,8 +18,15 @@ let compile=function(source) {
 };
 let renderImg=function (source) {
 	return source.map((ele)=>{
-		return `<img class='encourager' atl=${ele.name} src='${ele.src}'/>`
+		return `<img class='encourager' alt=${ele.name} src='${ele.src}'/>`
 	}).join('')
 }
 $('#C_api').html(compile(source))
-$('#imgContainer').html(renderImg(encourager['g']))
+$('#imgContainer').html(renderImg(encourager['g']));
+setTimeout(function() {
+	$('#imgContainer img').on('click',function() {
+		let name=$(this).attr('alt');
+		let word = 'hello programmer, I am'+name+', 加油';
+		chrome.tts.speak(word);
+	})
+})

@@ -33,11 +33,18 @@ webpackJsonp([0],[
 	};
 	var renderImg = function renderImg(source) {
 	  return source.map(function (ele) {
-	    return '<img class=\'encourager\' atl=' + ele.name + ' src=\'' + ele.src + '\'/>';
+	    return '<img class=\'encourager\' alt=' + ele.name + ' src=\'' + ele.src + '\'/>';
 	  }).join('');
 	};
 	$('#C_api').html(compile(_index2.default));
 	$('#imgContainer').html(renderImg(_encourager2.default['g']));
+	setTimeout(function () {
+	  $('#imgContainer img').on('click', function () {
+	    var name = $(this).attr('alt');
+	    var word = 'hello programmer, I am' + name + ', 加油';
+	    chrome.tts.speak(word);
+	  });
+	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
