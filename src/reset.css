@@ -1,0 +1,239 @@
+html, body {
+    color: #212121;
+    background: #f7f7f7;
+    height: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fieldset, lengend, button, input, textarea, form, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+body, button, input, select, textarea {
+    line-height: normal!important;
+}
+
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+
+code, kbd, pre, samp, tt {
+    font-family: "Courier New", Courier, monospace;
+}
+
+small {
+    font-size: 0.12rem;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+
+/* HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block; /* 1 */
+    vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+i {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #212121;
+    outline: 0 none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus, input:focus {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: none;
+}
+
+/*input:hover {
+    border-width: 1px;
+}*/
+
+abbr[title], acronym[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+legend {
+    color: #000;
+}
+
+fieldset, img {
+    border: none;
+}
+
+button, input, select, textarea, label {
+    font-size: 100%;
+    vertical-align: middle;
+    outline: 0;
+    border:none;
+}
+
+textarea {
+    resize: none !important;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table th {
+    text-align: left;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    *color: #fff;
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+    border: 0;
+    outline: none;
+}
+div {
+    outline: none;
+}
+
+.t-l {
+    text-align: left;
+}
+
+.t-r {
+    text-align: right;
+}
+
+.t-c {
+    text-align: center;
+}
+
+.f-l {
+    float: left;
+}
+
+.f-r {
+    float: right;
+}
+
+.p-a {
+    position: absolute;
+}
+
+.p-r {
+    position: relative;
+}
+
+.i-b {
+    display: inline-block;
+}
+
+.c-b {
+    clear: both;
+}
+
+.v-middle {
+    vertical-align: middle;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.bf,
+.bold {
+    font-weight: bold;
+}
+
+body{
+    font-size: 16px;
+}
+*{
+    box-sizing: border-box;
+}
+
+
+
+
