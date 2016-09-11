@@ -6,7 +6,7 @@
 > code-panda是集成了主流前端框架的api地址，让你在快乐中编程
 
 ## download link
-[code-panda](./dist.crx)
+[code-panda](https://github.com/slashhuang/code-panda-chrome-extenstion/blob/master/dist.crx?raw=true)
 
 ### usage[使用]
 1. Go to `chrome://extensions/` (in chrome) and drag  dist.crx into the panel
