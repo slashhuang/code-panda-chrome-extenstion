@@ -23,11 +23,13 @@ let renderImg=function (source,gender) {
 }
 $('#C_api').html(compile(source))
 $('#imgContainer').html(renderImg(encourager['g'],'female')+renderImg(encourager['m'],'male'));
+$('#author').on('click',function(e) {
+	$('#author img').toggle();
+});
 setTimeout(()=>{
 	$('#C_api b').on('click',function (ele) {
-		chrome.tabs.create(
-			{url: $(this).data('href')}
-		)
+		chrome.tabs.create({url: $(this).data('href')});
+		chrome.tts.speak('u are great, I love you',{rate:0.5,pitch:1.2})
 	})
 })
 setTimeout(function() {

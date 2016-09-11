@@ -3,6 +3,24 @@
   text-overflow:ellipsis;
   white-space:nowrap
  }
+ .contact{
+  padding:10px;
+  text-decoration:underline;
+  text-align:right;
+  cursor:pointer;
+  position:relative;
+  &:hover{
+    color:lightcoral;
+  }
+  .qr-code{
+    display:none;
+    position:absolute;
+    bottom:30px;
+    right:1px;
+    height:100px;
+    width:100px;
+  }
+}
  .container{
       img{
         cursor:pointer;
@@ -23,7 +41,7 @@
         color: lightcoral;
       }
 }
- .title{
+.title{
     color:lightcoral;
     font-size:16px;
     line-height:22px;

@@ -38,9 +38,13 @@ webpackJsonp([0],[
 	};
 	$('#C_api').html(compile(_index2.default));
 	$('#imgContainer').html(renderImg(_encourager2.default['g'], 'female') + renderImg(_encourager2.default['m'], 'male'));
+	$('#author').on('click', function (e) {
+		$('#author img').toggle();
+	});
 	setTimeout(function () {
 		$('#C_api b').on('click', function (ele) {
 			chrome.tabs.create({ url: $(this).data('href') });
+			chrome.tts.speak('u are great, I love you', { rate: 0.5, pitch: 1.2 });
 		});
 	});
 	setTimeout(function () {
