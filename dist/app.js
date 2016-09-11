@@ -18,6 +18,20 @@ webpackJsonp([0],[
 	 * @Author slashhuang
 	 * githubcom/slashhuang
 	 */
+	chrome.tts.getVoices(function (voices) {
+	  for (var i = 0; i < voices.length; i++) {
+	    console.log('Voice ' + i + ':');
+	    console.log('  name: ' + voices[i].voiceName);
+	    console.log('  lang: ' + voices[i].lang);
+	    console.log('  gender: ' + voices[i].gender);
+	    console.log('  extension id: ' + voices[i].extensionId);
+	    console.log('  event types: ' + voices[i].eventTypes);
+	    // let data = Object.assign(voices[i]);
+	    // console.log(data);
+	    //  chrome.tts.speak('hello ',data);
+	  }
+	});
+	
 	__webpack_require__(5);
 	__webpack_require__(9);
 	
@@ -31,18 +45,43 @@ webpackJsonp([0],[
 	    return pre + ('<li><h1>' + cur['_name'] + '</h1>' + transpileSub(cur['sub']) + '</li>');
 	  }, '');
 	};
-	var renderImg = function renderImg(source) {
+	// "tts_engine": {
+	//    "voices": [
+	//      {
+	//        "voice_name": "panda",
+	//        "lang": "en-GB",
+	//        "event_types": ["start", "marker", "end"]
+	//      }
+	//    ]
+	//  },
+	var renderImg = function renderImg(source, gender) {
 	  return source.map(function (ele) {
-	    return '<img class=\'encourager\' alt=' + ele.name + ' src=\'' + ele.src + '\'/>';
+	    return '<img class=\'encourager\' alt=' + ele.name + ' data-gender=' + gender + ' src=\'' + ele.src + '\'/>';
 	  }).join('');
 	};
 	$('#C_api').html(compile(_index2.default));
-	$('#imgContainer').html(renderImg(_encourager2.default['g']));
+	$('#imgContainer').html(renderImg(_encourager2.default['g'], 'female') + renderImg(_encourager2.default['m'], 'male'));
 	setTimeout(function () {
 	  $('#imgContainer img').on('click', function () {
+	    var m_option = {
+	      'lang': 'en-GB',
+	      'rate': 0.7,
+	      'pitch': 2.0
+	    };
+	    var g_options = {
+	      'rate': 0.8,
+	      'pitch': 1.4
+	    };
 	    var name = $(this).attr('alt');
-	    var word = 'hello programmer, I am' + name + ', 加油';
-	    chrome.tts.speak(word);
+	    var gender = $(this).data('gender');
+	    var word = 'hello , smart , I am ' + name + ', work hard and ,  be happy';
+	    switch (gender) {
+	      case 'male':
+	        chrome.tts.speak('hello , smart , go on coding , marry bai fu mei', m_option);
+	        break;
+	      default:
+	        chrome.tts.speak(word, g_options);
+	    }
 	  });
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -140,6 +179,7 @@ webpackJsonp([0],[
 	*/
 	var g_e = [{
 	  name: '苍进空',
+	  y: 'cang jing kong',
 	  src: 'encourager/cjk.jpg'
 	}, {
 	  name: '奥黛丽赫本',

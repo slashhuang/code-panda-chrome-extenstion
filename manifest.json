@@ -15,7 +15,7 @@
       {
         "voice_name": "panda",
         "lang": "en-US",
-        "gender": "female",
+        "gender": "male",
         "event_types": ["start", "marker", "end"]
       }
     ]

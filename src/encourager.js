@@ -4,6 +4,7 @@
 */
 let g_e=[{
     name:'苍进空',
+    y:'cang jing kong',
     src:'encourager/cjk.jpg'
   },{
     name:'奥黛丽赫本',
