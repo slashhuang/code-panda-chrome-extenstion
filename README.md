@@ -8,7 +8,7 @@
 <img src='./images/capture.jpg' width='400px'>
 
 ## 下载
-[code-panda]('./dist.crx')
+[code-panda](./dist.crx)
 
 ### Installing
 1. Go to `chrome://extensions/` (in chrome) and drag  dist.crx into the panel
