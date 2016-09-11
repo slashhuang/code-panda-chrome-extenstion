@@ -2,23 +2,6 @@
  * @Author slashhuang
  * githubcom/slashhuang
  */
-chrome.tts.getVoices(
-          function(voices) {
-            for (var i = 0; i < voices.length; i++) {
-              console.log('Voice ' + i + ':');
-              console.log('  name: ' + voices[i].voiceName);
-              console.log('  lang: ' + voices[i].lang);
-              console.log('  gender: ' + voices[i].gender);
-              console.log('  extension id: ' + voices[i].extensionId);
-              console.log('  event types: ' + voices[i].eventTypes);
-              // let data = Object.assign(voices[i]);
-              // console.log(data);
-              //  chrome.tts.speak('hello ',data);
-
-            }
-          });
-
-
 require('./src/reset.css');
 require('./src/index.scss');
 import source from './src/index.js';
@@ -33,15 +16,6 @@ let compile=function(source) {
           return pre+`<li><h1>${cur['_name']}</h1>${transpileSub(cur['sub'])}</li>`
        },'')
 };
- // "tts_engine": {
- //    "voices": [
- //      {
- //        "voice_name": "panda",
- //        "lang": "en-GB",
- //        "event_types": ["start", "marker", "end"]
- //      }
- //    ]
- //  },
 let renderImg=function (source,gender) {
 	return source.map((ele)=>{
 		return `<img class='encourager' alt=${ele.name} data-gender=${gender} src='${ele.src}'/>`
@@ -49,6 +23,13 @@ let renderImg=function (source,gender) {
 }
 $('#C_api').html(compile(source))
 $('#imgContainer').html(renderImg(encourager['g'],'female')+renderImg(encourager['m'],'male'));
+setTimeout(()=>{
+	$('#C_api b').on('click',function (ele) {
+		chrome.tabs.create(
+			{url: $(this).data('href')}
+		)
+	})
+})
 setTimeout(function() {
 	$('#imgContainer img').on('click',function() {
 		let m_option={
