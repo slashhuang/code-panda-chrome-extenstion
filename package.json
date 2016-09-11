@@ -3,12 +3,8 @@
   "version": "1.1.0",
   "private": true,
   "scripts": {
-    "build": "gulp --gulpfile ./build/gulp4/build.js  --cwd ./ ",
-    "dev": "gulp --gulpfile ./build/gulp4/dev.js  --cwd ./ ",
-    "uglify": "gulp --gulpfile ./build/gulp4/build.js  --cwd ./ uglify --upload --watch ",
-    "zip": "gulp --gulpfile ./build/gulp4/build.js  --cwd ./ zip ",
-    "api:local": "gulp api --pjid=3hhXdO --mock --task=default --dev",
-    "api:dev": "gulp api --pjid=3hhXdO --task=default --dev"
+    "build": "webpack --config ./build/build.js  ",
+    "dev": "webpack --config ./build/dev.js  "
   },
   "dependencies": {
     "jquery": "~2.1.4"
@@ -37,6 +33,7 @@
     "gulp-zip": "*",
     "gutil": "^1.6.4",
     "html-loader": "^0.4.0",
+    "html-webpack-plugin": "^2.22.0",
     "less": "^2.5.3",
     "less-loader": "^2.2.1",
     "node-sass": "^3.4.2",

@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  width: 400px;
+  height: 220px; }
+
+.hint {
+  text-align: center; }
+
+.panda-bg {
+  background: url(eater_3eqYXmf.jpg) center no-repeat;
+  background-size: cover;
+  width: 240px;
+  height: 180px; }
+
+.coral {
+  color: lightcoral; }
+
+/*# sourceMappingURL=app.css.map*/

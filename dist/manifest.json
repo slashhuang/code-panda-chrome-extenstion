@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "panda keeper",
+  "description": "panda keeper ",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "./panda.png",
+    "default_popup": "./index.html",
+    "default_title": "panda always helps"
+  },
+  "author": "slashhuang",
+   "tts_engine": {
+    "voices": [
+      {
+        "voice_name": "panda",
+        "lang": "en-US",
+        "gender": "female",
+        "event_types": ["start", "marker", "end"]
+      }
+    ]
+  },
+  "permissions": [
+    "activeTab",
+     "<all_urls>",
+    "activeTab",
+    "tabs",
+    "tts"
+  ]
+}

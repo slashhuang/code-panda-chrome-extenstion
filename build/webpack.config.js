@@ -7,18 +7,17 @@ var webpack = require("webpack"),
   CopyWebpackPlugin = require('copy-webpack-plugin'),
   ExtractTextPlugin = require("extract-text-webpack-plugin"),
   WebpackNotifierPlugin = require('webpack-notifier'),
-  utils = require('./util'),
+ HtmlWebpackPlugin = require('html-webpack-plugin'),
   extend = require('extend'),
   path = require('path'),
   pkgJSON = require('../package.json');
-var entry_file = extend(
-  {app:'app'},
-  {jquery:'jquery'}
-);
 //webpack配置文件
 module.exports = {
   watch: true,
-  entry: entry_file,
+  entry:  {
+    app:'app',
+    common:['jquery']
+  },
   debug: true,
   devtool: 'source-map',
   output: {
@@ -29,46 +28,42 @@ module.exports = {
   },
   resolve: {
     alias: {
-       jquery:path.resolve(process.cwd(),'lib/jquery.min.js')
+      'jquery':path.resolve(process.cwd(),'lib/jquery.min.js'),
+      'app':path.resolve(process.cwd(),'app.js')
     }
   },
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: 'html',
-        to: 'html'
-      },
-      {
-        context: 'global/img',
-        from: '**/*',
-        to: 'img/common'
-      },
-      {
-        from: 'img',
-        to: 'img'
-      }
-    ]),
+    new CopyWebpackPlugin([{
+          from: 'images',
+          to: ''},
+        {
+          from: 'manifest.json',
+          to: ''}
+      ]),
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      chunksSortMode: 'dependency'
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery'
     }),
-    new WebpackNotifierPlugin(
-      {
+   new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+      minChunks: Infinity
+    }),
+    new WebpackNotifierPlugin({
         title: 'Webpack 编译成功',
         alwaysNotify: true
       }),
-    new ExtractTextPlugin("[name].css"),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      minChunks: Infinity
-    })
+    new ExtractTextPlugin("[name].css")
   ],
   module: {
     loaders: [{
       test: /\.js[x]?$/,
-      exclude: /(node_modules)|(global\/lib\/)/,
+      exclude: /(node_modules)/,
       loader: 'babel-loader'
     },
-      {
+     {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap&-convertValues')
       }, {
@@ -80,24 +75,6 @@ module.exports = {
       }, {
         test: /\.(png|jpg|gif|woff|woff2|ttf|eot|svg|swf)$/,
         loader: "file-loader?name=[name]_[sha512:hash:base64:7].[ext]"
-      }, {
-        test: /\.html/,
-        loader: "html-loader?" + JSON.stringify({
-          attrs: false,
-          minimize: true,
-          removeAttributeQuotes: false,
-          collapseInlineTagWhitespace: true,
-          preserveLineBreaks: false,
-          conservativeCollapse: false,
-          ignoreCustomFragments: [{
-            source: '\\s?\\{\\{[\\s\\S]*?\\}\\}\\s?'
-          }],
-          customEventAttributes: [/^\@/]
-        })
-      },
-      {
-        test: /\.json$/,
-        loader: "json"
       }
     ]
   }
