@@ -8,6 +8,10 @@ webpackJsonp([0],[
 	
 	var _index2 = _interopRequireDefault(_index);
 	
+	var _encourager = __webpack_require__(12);
+	
+	var _encourager2 = _interopRequireDefault(_encourager);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	/**
@@ -27,7 +31,13 @@ webpackJsonp([0],[
 	    return pre + ('<li><h1>' + cur['_name'] + '</h1>' + transpileSub(cur['sub']) + '</li>');
 	  }, '');
 	};
+	var renderImg = function renderImg(source) {
+	  return source.map(function (ele) {
+	    return '<img class=\'encourager\' atl=' + ele.name + ' src=\'' + ele.src + '\'/>';
+	  }).join('');
+	};
 	$('#C_api').html(compile(_index2.default));
+	$('#imgContainer').html(renderImg(_encourager2.default['g']));
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
@@ -84,7 +94,14 @@ webpackJsonp([0],[
 	    url: 'https://angular.io/docs/ts/latest/api/'
 	  }]
 	};
-	var _const = [_react, _vueJs, _webpack, _ng];
+	var _github = {
+	  _name: 'nodeJS',
+	  sub: [{
+	    name: 'api',
+	    url: 'https://github.com/slashhuang/node/tree/master/doc/api'
+	  }]
+	};
+	var _const = [_react, _vueJs, _webpack, _ng, _github];
 	module.exports = _const;
 
 /***/ },
@@ -101,6 +118,44 @@ webpackJsonp([0],[
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 10 */,
+/* 11 */,
+/* 12 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	/*
+	* @Author slashhunag
+	* 鼓励师
+	*/
+	var g_e = [{
+	  name: '苍进空',
+	  src: 'encourager/cjk.jpg'
+	}, {
+	  name: '奥黛丽赫本',
+	  src: 'encourager/hebe.jpg'
+	}, {
+	  name: '林志玲',
+	  src: 'encourager/lzl.jpg'
+	}];
+	var m_e = [{
+	  name: '吴彦祖',
+	  src: 'encourager/wlz.jpg'
+	}, {
+	  name: '汤姆科鲁兹',
+	  src: 'encourager/tom.jpg'
+	}, {
+	  name: '冯德伦',
+	  src: 'encourager/fdl.jpg'
+	}];
+	var encourager = {
+	  g: g_e,
+	  m: m_e
+	};
+	module.exports = encourager;
 
 /***/ }
 ]);

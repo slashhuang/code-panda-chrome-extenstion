@@ -3,12 +3,13 @@
   text-overflow:ellipsis;
   white-space:nowrap
  }
-
-
  .container{
-        display: flex;
-        width:400px;
-        height:220px;
+      img{
+        cursor:pointer;
+        float:left;
+        display:block;
+        height:160px;
+      }
       .hint{
         text-align: center;
       }
@@ -33,14 +34,6 @@
   font-size:14px;
   width:100%;
   display: flex;
-  .beauty{
-    width:100px;
-    height:100px;
-    img{
-      width:inherit;
-      height:inherit;
-    }
-  }
   .nav-area{
       margin:5px 0;
       text-align:center;
@@ -53,7 +46,7 @@
             align-items:center;
             margin:3px 0;
             border-bottom:1px solid rgba(0,0,0,0.1);
-            b{
+            b{    cursor:pointer;
                   font-size:16px;
                   padding:0 10px;
                   max-width:130px;
@@ -62,15 +55,9 @@
             h1{
               font-size:18px;
               color:#E54A1B;
-              width:150px;
+              width:120px;
             }
           }
-      }
-  }
-  .show-area{
-      flex:1;
-      [class*="-tab"]{
-        display:none;
       }
   }
 }

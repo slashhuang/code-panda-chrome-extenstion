@@ -242,19 +242,23 @@ body{
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-.container {
-  display: flex;
-  width: 400px;
-  height: 220px; }
-  .container .hint {
-    text-align: center; }
-  .container .panda-bg {
-    background: url(eater_3eqYXmf.jpg) center no-repeat;
-    background-size: cover;
-    width: 240px;
-    height: 180px; }
-  .container .coral {
-    color: lightcoral; }
+.container img {
+  cursor: pointer;
+  float: left;
+  display: block;
+  height: 160px; }
+
+.container .hint {
+  text-align: center; }
+
+.container .panda-bg {
+  background: url(eater_3eqYXmf.jpg) center no-repeat;
+  background-size: cover;
+  width: 240px;
+  height: 180px; }
+
+.container .coral {
+  color: lightcoral; }
 
 .title {
   color: lightcoral;
@@ -267,12 +271,6 @@ body{
   font-size: 14px;
   width: 100%;
   display: flex; }
-  .api-container .beauty {
-    width: 100px;
-    height: 100px; }
-    .api-container .beauty img {
-      width: inherit;
-      height: inherit; }
   .api-container .nav-area {
     margin: 5px 0;
     text-align: center;
@@ -285,16 +283,13 @@ body{
       margin: 3px 0;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
       .api-container .nav-area .tab li b {
+        cursor: pointer;
         font-size: 16px;
         padding: 0 10px;
         max-width: 130px; }
       .api-container .nav-area .tab li h1 {
         font-size: 18px;
         color: #E54A1B;
-        width: 150px; }
-  .api-container .show-area {
-    flex: 1; }
-    .api-container .show-area [class*="-tab"] {
-      display: none; }
+        width: 120px; }
 
 /*# sourceMappingURL=app.css.map*/

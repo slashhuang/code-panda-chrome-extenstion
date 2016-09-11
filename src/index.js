@@ -46,7 +46,15 @@
         url:'https://angular.io/docs/ts/latest/api/'
       }]
     };
-    let _const = [_react,_vueJs,_webpack,_ng]; 
+    let _github={
+      _name:'nodeJS',
+      sub:[
+      {
+        name:'api',
+        url:'https://github.com/slashhuang/node/tree/master/doc/api'
+      }]
+    };
+    let _const = [_react,_vueJs,_webpack,_ng,_github]; 
     module.exports = _const;
 
 
