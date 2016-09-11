@@ -1,22 +1,18 @@
-// Copyright (c) 2014 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 /**
- * Get the current URL.
- *
- * @param {function(string)} callback - called when the URL of the current tab
- *   is found.
+ * @Author slashhuang
+ * githubcom/slashhuang
  */
+require('./src/reset.css');
 require('./src/index.scss');
-var app={
-  init:function() {
-    $('.panda-bg').click(()=>{
-      chrome.tts.speak('I am a panda');
-    })
-  }
-}
-
-$(document).ready(()=>{
-	 app.init();
-});
+import source from './src/index.js';
+let transpileSub = (_sub)=>{
+            return _sub.reduce((pre,cur,index)=>{
+              return pre+`<b data-href='${cur['url']}'>${cur['name']}</b>`
+            },'')
+          };
+let compile=function(source) {
+       return source.reduce((pre,cur,index)=>{
+          return pre+`<li><h1>${cur['_name']}</h1>${transpileSub(cur['sub'])}</li>`
+       },'')
+};
+$('#C_api').html(compile(source))
